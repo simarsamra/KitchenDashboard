@@ -1,170 +1,170 @@
 {
   "Breakfast": [
     {
-      "name": "Classic Pancakes",
-      "ingredients": ["2 cups flour", "2 eggs", "1.5 cups milk", "2 tbsp sugar", "1 tsp baking powder"],
-      "steps": ["Mix dry ingredients.", "Whisk in eggs and milk.", "Cook on griddle until golden."]
+      "name": "Oats Upma",
+      "ingredients": ["1 cup rolled oats", "1/2 cup mixed vegetables", "1/2 onion", "1 green chili", "1 tsp olive oil", "Salt", "Lemon juice", "Coriander"],
+      "steps": ["Dry roast oats.", "Sauté onion and chili in olive oil.", "Add vegetables and cook.", "Add oats, salt, and little water.", "Cook for 2-3 min.", "Finish with lemon juice and coriander."]
     },
     {
-      "name": "Avocado Toast",
-      "ingredients": ["2 slices whole grain bread", "1 avocado", "Salt", "Pepper", "Chili flakes"],
-      "steps": ["Toast bread.", "Mash avocado onto toast.", "Season and sprinkle chili flakes."]
+      "name": "Moong Dal Chilla",
+      "ingredients": ["1/2 cup split yellow moong dal", "1/4 cup chopped spinach", "1/4 cup grated carrot", "Salt", "Black pepper", "1 tsp olive oil"],
+      "steps": ["Soak and blend dal.", "Mix with veggies and spices.", "Spread on pan and cook with minimal oil."]
     },
     {
-      "name": "Oatmeal Bowl",
-      "ingredients": ["1 cup oats", "2 cups water/milk", "Banana slices", "Honey", "Nuts"],
-      "steps": ["Cook oats in water/milk.", "Top with banana, honey, and nuts."]
+      "name": "Vegetable Poha",
+      "ingredients": ["1 cup poha (flattened rice)", "1/2 cup mixed vegetables", "1 onion", "1 tsp mustard seeds", "1 tsp olive oil", "Salt", "Lemon juice"],
+      "steps": ["Rinse poha.", "Sauté mustard seeds and onion.", "Add vegetables and cook.", "Add poha and salt.", "Mix and finish with lemon juice."]
     },
     {
-      "name": "Berry Yogurt Parfait",
-      "ingredients": ["1 cup yogurt", "1/2 cup mixed berries", "Granola"],
-      "steps": ["Layer yogurt, berries, and granola in glass."]
+      "name": "Sprouted Moong Salad",
+      "ingredients": ["1 cup sprouted moong", "1 tomato", "1 cucumber", "Salt", "Lemon juice", "Coriander"],
+      "steps": ["Mix all ingredients.", "Season and serve chilled."]
     },
     {
-      "name": "Scrambled Eggs",
-      "ingredients": ["3 eggs", "Salt", "Butter", "Chives"],
-      "steps": ["Beat eggs.", "Cook in butter.", "Season and garnish with chives."]
+      "name": "Fruit & Nut Yogurt",
+      "ingredients": ["1 cup low-fat yogurt", "1/2 apple", "1/2 banana", "1 tbsp chopped walnuts", "Honey (optional)"],
+      "steps": ["Chop fruits.", "Mix with yogurt and nuts.", "Drizzle honey if desired."]
     },
     {
-      "name": "Breakfast Burrito",
-      "ingredients": ["Tortilla", "Egg", "Cheese", "Salsa", "Beans"],
-      "steps": ["Scramble egg.", "Fill tortilla with ingredients.", "Roll and serve."]
+      "name": "Besan Cheela",
+      "ingredients": ["1 cup besan (chickpea flour)", "1/4 cup chopped onion", "1/4 cup tomato", "Coriander", "Salt", "Black pepper", "1 tsp olive oil"],
+      "steps": ["Mix besan with veggies and spices.", "Spread on pan and cook with minimal oil."]
     },
     {
-      "name": "Fruit Salad",
-      "ingredients": ["Assorted fresh fruits", "Mint", "Lime juice"],
-      "steps": ["Chop fruits.", "Mix with mint and lime."]
+      "name": "Banana Peanut Butter Toast",
+      "ingredients": ["2 slices whole grain bread", "1 banana", "1 tbsp peanut butter"],
+      "steps": ["Toast bread.", "Spread peanut butter.", "Top with banana slices."]
     },
     {
-      "name": "Egg Muffins",
-      "ingredients": ["Eggs", "Diced veggies", "Cheese", "Salt"],
-      "steps": ["Mix all.", "Pour into muffin tin.", "Bake at 350°F for 20 min."]
+      "name": "Vegetable Daliya",
+      "ingredients": ["1/2 cup broken wheat (daliya)", "1 cup mixed vegetables", "1/2 tsp cumin seeds", "1 tsp olive oil", "Salt", "Black pepper"],
+      "steps": ["Roast daliya.", "Sauté cumin and veggies in oil.", "Add daliya and water.", "Cook until soft.", "Season and serve."]
     }
   ],
   "Lunch": [
     {
-      "name": "Grilled Cheese",
-      "ingredients": ["2 slices bread", "Cheddar cheese", "Butter"],
-      "steps": ["Butter bread.", "Add cheese.", "Grill until golden."]
+      "name": "Brown Rice & Rajma Bowl",
+      "ingredients": ["1 cup cooked brown rice", "1/2 cup cooked rajma (kidney beans)", "1/2 onion", "1 tomato", "Spices (cumin, coriander, turmeric)", "Salt", "Coriander"],
+      "steps": ["Sauté onion and tomato.", "Add spices and cooked rajma.", "Simmer for 5 min.", "Serve over brown rice, garnish with coriander."]
     },
     {
-      "name": "Chicken Salad",
-      "ingredients": ["Cooked chicken", "Lettuce", "Tomatoes", "Cucumber", "Dressing"],
-      "steps": ["Chop veggies and chicken.", "Mix and toss with dressing."]
+      "name": "Grilled Tofu Wrap",
+      "ingredients": ["Whole wheat tortilla", "100g tofu", "Lettuce", "Tomato", "Cucumber", "Mint chutney", "Black pepper"],
+      "steps": ["Grill tofu slices.", "Fill tortilla with veggies and tofu.", "Add mint chutney and pepper.", "Wrap and serve."]
     },
     {
-      "name": "Veggie Wrap",
-      "ingredients": ["Tortilla", "Hummus", "Assorted veggies"],
-      "steps": ["Spread hummus on tortilla.", "Add veggies.", "Wrap and serve."]
+      "name": "Chickpea Salad",
+      "ingredients": ["1 cup cooked chickpeas", "1 tomato", "1 cucumber", "1/2 onion", "Salt", "Lemon juice", "Coriander"],
+      "steps": ["Mix all ingredients.", "Season and serve chilled."]
     },
     {
-      "name": "Quinoa Bowl",
-      "ingredients": ["Quinoa", "Roasted veggies", "Feta cheese"],
-      "steps": ["Cook quinoa.", "Top with veggies and cheese."]
+      "name": "Vegetable Khichdi",
+      "ingredients": ["1/2 cup rice", "1/4 cup moong dal", "1 cup mixed vegetables", "Spices (cumin, turmeric)", "Salt"],
+      "steps": ["Wash rice and dal.", "Cook with vegetables and spices until soft."]
     },
     {
-      "name": "Tomato Soup",
-      "ingredients": ["Tomatoes", "Onion", "Garlic", "Cream"],
-      "steps": ["Cook tomatoes/onion/garlic.", "Blend and add cream."]
+      "name": "Palak Paneer (Low Fat)",
+      "ingredients": ["100g low-fat paneer", "2 cups spinach", "1 tomato", "1 onion", "Spices (cumin, coriander, turmeric)", "Salt"],
+      "steps": ["Blanch and blend spinach.", "Sauté onion and tomato.", "Add spices and paneer.", "Add spinach puree, simmer for 5 min."]
     },
     {
-      "name": "Turkey Sandwich",
-      "ingredients": ["Whole wheat bread", "Turkey slices", "Lettuce", "Mustard"],
-      "steps": ["Layer ingredients on bread.", "Serve."]
+      "name": "Quinoa Vegetable Bowl",
+      "ingredients": ["1 cup cooked quinoa", "1 cup mixed vegetables", "Salt", "Black pepper", "Lemon juice"],
+      "steps": ["Cook quinoa.", "Mix with steamed vegetables.", "Season and serve."]
     },
     {
-      "name": "Caesar Salad",
-      "ingredients": ["Romaine", "Croutons", "Parmesan", "Caesar dressing"],
-      "steps": ["Toss lettuce with dressing.", "Add toppings."]
+      "name": "Lentil Soup",
+      "ingredients": ["1/2 cup masoor dal", "1 tomato", "1 carrot", "1/2 onion", "Spices (cumin, turmeric)", "Salt"],
+      "steps": ["Cook dal and vegetables with spices.", "Blend if desired.", "Serve hot."]
     },
     {
-      "name": "Rice Bowl",
-      "ingredients": ["Cooked rice", "Steamed veggies", "Soy sauce"],
-      "steps": ["Top rice with veggies.", "Drizzle soy sauce."]
+      "name": "Stuffed Bell Peppers",
+      "ingredients": ["2 bell peppers", "1/2 cup cooked rice", "1/2 cup mixed vegetables", "Spices", "Salt"],
+      "steps": ["Mix rice, veggies, and spices.", "Stuff peppers.", "Bake until tender."]
     }
   ],
   "Dinner": [
     {
-      "name": "Spaghetti Marinara",
-      "ingredients": ["Spaghetti", "Tomato sauce", "Garlic", "Basil"],
-      "steps": ["Cook spaghetti.", "Heat sauce.", "Combine and serve."]
+      "name": "Vegetable Curry",
+      "ingredients": ["1 cup mixed vegetables", "1 tomato", "1 onion", "Spices (cumin, coriander, turmeric)", "Salt", "1 tsp olive oil"],
+      "steps": ["Sauté onion and tomato.", "Add spices and vegetables.", "Cook until tender."]
     },
     {
-      "name": "Grilled Salmon",
-      "ingredients": ["Salmon fillet", "Lemon", "Salt", "Pepper"],
-      "steps": ["Season salmon.", "Grill until cooked.", "Squeeze lemon."]
+      "name": "Tofu Stir Fry",
+      "ingredients": ["100g tofu", "1 cup mixed vegetables", "Soy sauce (low sodium)", "Black pepper", "1 tsp olive oil"],
+      "steps": ["Sauté tofu and vegetables in olive oil.", "Add soy sauce and pepper.", "Cook for 5 min."]
     },
     {
-      "name": "Chicken Stir Fry",
-      "ingredients": ["Chicken breast", "Veggies", "Soy sauce", "Rice"],
-      "steps": ["Cook chicken.", "Add veggies.", "Stir fry with soy sauce.", "Serve over rice."]
+      "name": "Dal Tadka",
+      "ingredients": ["1/2 cup toor dal", "1 tomato", "1/2 onion", "Spices (cumin, turmeric)", "Salt", "1 tsp olive oil"],
+      "steps": ["Cook dal with tomato and onion.", "Prepare tadka with spices and oil.", "Mix and serve."]
     },
     {
-      "name": "Veggie Curry",
-      "ingredients": ["Mixed veggies", "Curry paste", "Coconut milk"],
-      "steps": ["Cook veggies.", "Add paste and coconut milk.", "Simmer and serve."]
+      "name": "Bhindi Masala",
+      "ingredients": ["1 cup okra (bhindi)", "1 onion", "1 tomato", "Spices (coriander, cumin)", "Salt", "1 tsp olive oil"],
+      "steps": ["Sauté onion and tomato.", "Add spices and bhindi.", "Cook until tender."]
     },
     {
-      "name": "Beef Tacos",
-      "ingredients": ["Taco shells", "Ground beef", "Lettuce", "Cheese", "Salsa"],
-      "steps": ["Cook beef.", "Fill shells with ingredients."]
+      "name": "Chana Masala",
+      "ingredients": ["1 cup cooked chickpeas", "1 onion", "1 tomato", "Spices (coriander, cumin, turmeric)", "Salt", "1 tsp olive oil"],
+      "steps": ["Sauté onion and tomato.", "Add spices and chickpeas.", "Simmer for 10 min."]
     },
     {
-      "name": "Stuffed Peppers",
-      "ingredients": ["Bell peppers", "Rice", "Ground meat", "Tomato sauce"],
-      "steps": ["Stuff peppers.", "Bake until tender."]
+      "name": "Methi Thepla",
+      "ingredients": ["1 cup whole wheat flour", "1/2 cup chopped fenugreek leaves", "Spices", "Salt", "1 tsp olive oil"],
+      "steps": ["Mix all ingredients.", "Roll into flatbreads.", "Cook on pan with minimal oil."]
     },
     {
-      "name": "Baked Ziti",
-      "ingredients": ["Ziti pasta", "Marinara", "Mozzarella", "Ricotta"],
-      "steps": ["Cook pasta.", "Layer with cheese and sauce.", "Bake."]
+      "name": "Vegetable Pulao",
+      "ingredients": ["1 cup rice", "1 cup mixed vegetables", "Spices (cumin, bay leaf)", "Salt"],
+      "steps": ["Sauté spices.", "Add rice and vegetables.", "Cook until rice is done."]
     },
     {
-      "name": "Teriyaki Tofu",
-      "ingredients": ["Tofu", "Teriyaki sauce", "Broccoli", "Rice"],
-      "steps": ["Cook tofu.", "Add sauce and broccoli.", "Serve with rice."]
+      "name": "Paneer Bhurji (Low Fat)",
+      "ingredients": ["100g low-fat paneer", "1 onion", "1 tomato", "Spices (cumin, turmeric)", "Salt", "Coriander"],
+      "steps": ["Sauté onion and tomato.", "Add spices and crumbled paneer.", "Cook for 5 min.", "Garnish with coriander."]
     }
   ],
   "Spare": [
     {
-      "name": "Granola Bars",
-      "ingredients": ["Oats", "Honey", "Nuts", "Dried fruit"],
-      "steps": ["Mix all.", "Press into pan.", "Bake at 350°F for 15 min."]
+      "name": "Roasted Chickpeas",
+      "ingredients": ["1 cup cooked chickpeas", "1 tsp olive oil", "Salt", "Paprika"],
+      "steps": ["Toss chickpeas with oil and spices.", "Roast at 400°F for 20 min."]
     },
     {
-      "name": "Smoothie",
-      "ingredients": ["Banana", "Berries", "Yogurt", "Milk"],
-      "steps": ["Blend all ingredients until smooth."]
+      "name": "Fruit Chaat",
+      "ingredients": ["1 cup assorted fruits", "Chaat masala", "Lemon juice"],
+      "steps": ["Chop fruits.", "Mix with chaat masala and lemon juice."]
     },
     {
-      "name": "Quesadilla",
-      "ingredients": ["Tortilla", "Cheese", "Beans"],
-      "steps": ["Fill tortilla.", "Cook on skillet until cheese melts."]
+      "name": "Cucumber Sticks with Hummus",
+      "ingredients": ["1 cucumber", "1/2 cup hummus"],
+      "steps": ["Cut cucumber into sticks.", "Serve with hummus."]
     },
     {
-      "name": "Egg Salad",
-      "ingredients": ["Boiled eggs", "Mayo", "Celery", "Salt", "Pepper"],
-      "steps": ["Chop eggs.", "Mix with other ingredients."]
+      "name": "Sprouted Moong Snack",
+      "ingredients": ["1 cup sprouted moong", "Salt", "Lemon juice", "Coriander"],
+      "steps": ["Mix all ingredients.", "Serve chilled."]
     },
     {
-      "name": "Fruit Popsicles",
-      "ingredients": ["Fruit juice", "Chopped fruit"],
-      "steps": ["Mix juice and fruit.", "Freeze in molds."]
+      "name": "Baked Sweet Potato Fries",
+      "ingredients": ["1 sweet potato", "1 tsp olive oil", "Salt", "Paprika"],
+      "steps": ["Cut sweet potato into fries.", "Toss with oil and spices.", "Bake at 425°F for 20 min."]
     },
     {
-      "name": "Pizza Toast",
-      "ingredients": ["Bread", "Tomato sauce", "Cheese", "Pepperoni"],
-      "steps": ["Top bread with sauce and cheese.", "Bake until cheese melts."]
+      "name": "Low-Fat Yogurt with Berries",
+      "ingredients": ["1 cup low-fat yogurt", "1/2 cup mixed berries"],
+      "steps": ["Mix berries into yogurt.", "Serve chilled."]
     },
     {
-      "name": "Hummus Dip",
-      "ingredients": ["Chickpeas", "Tahini", "Lemon juice", "Garlic"],
-      "steps": ["Blend all ingredients.", "Serve with veggies."]
+      "name": "Apple Slices with Peanut Butter",
+      "ingredients": ["1 apple", "1 tbsp peanut butter"],
+      "steps": ["Slice apple.", "Serve with peanut butter."]
     },
     {
-      "name": "Yogurt Bark",
-      "ingredients": ["Yogurt", "Honey", "Berries"],
-      "steps": ["Spread yogurt.", "Top with honey and berries.", "Freeze."]
+      "name": "Carrot Sticks with Mint Dip",
+      "ingredients": ["2 carrots", "1/4 cup mint chutney"],
+      "steps": ["Cut carrots into sticks.", "Serve with mint chutney."]
     }
   ]
 }
