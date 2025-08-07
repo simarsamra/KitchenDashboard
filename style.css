@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kitchen Recipes Display</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Kitchen Recipes</h1>
+    <button id="refreshBtn">Refresh Recipes</button>
+    <span id="status"></span>
+  </header>
+  <main>
+    <section id="categories"></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
