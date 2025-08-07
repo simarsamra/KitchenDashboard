@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadRecipes(false, true);
   });
   loadRecipes();
+
+  // Auto-refresh every 5 minutes (300000 ms)
+  setInterval(() => loadRecipes(), 1200000);
 });
 
 async function loadRecipes(forceRefresh=false, keepOption=false) {
