@@ -42,35 +42,15 @@ async function loadRecipes(forceRefresh=false, keepDay=false) {
   setStatus('Loading...');
   let recipes;
 
-  // Try GitHub raw fetch
+  // Always fetch from GitHub (no localStorage)
   try {
-    if (forceRefresh || !localStorage.getItem(LS_KEY)) {
-      const resp = await fetch(RAW_URL, {cache: "no-store"});
-      if (resp.ok) {
-        recipes = await resp.json();
-        localStorage.setItem(LS_KEY, JSON.stringify(recipes));
-        setStatus('Loaded from GitHub');
-      } else throw new Error('GitHub fetch failed');
-    }
+    const resp = await fetch(RAW_URL, {cache: "no-store"});
+    if (resp.ok) {
+      recipes = await resp.json();
+      setStatus('Loaded from GitHub');
+    } else throw new Error('GitHub fetch failed');
   } catch (e) {
-    setStatus('GitHub fetch failed, trying localStorage...');
-  }
-
-  // Try localStorage
-  if (!recipes) {
-    try {
-      const stored = localStorage.getItem(LS_KEY);
-      if (stored) {
-        recipes = JSON.parse(stored);
-        setStatus('Loaded from localStorage');
-      }
-    } catch (e) {
-      setStatus('localStorage load failed, using fallback...');
-    }
-  }
-
-  // Fallback recipes.json (bundled)
-  if (!recipes) {
+    setStatus('GitHub fetch failed, trying bundled file...');
     try {
       const resp = await fetch('recipes.json');
       if (resp.ok) {
