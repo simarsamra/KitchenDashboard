@@ -21,11 +21,12 @@ const FALLBACK_RECIPES = {
   ]
 };
 
+// Update MEAL_TIMES to match your requirements
 const MEAL_TIMES = [
-  { name: "Breakfast", start: 5, end: 10 },   // 5am - 10am
-  { name: "Lunch", start: 11, end: 15 },      // 11am - 3pm
-  { name: "Dinner", start: 16, end: 21 },     // 4pm - 9pm
-  { name: "Spare", start: 22, end: 4 }        // 10pm - 4am (wraps around midnight)
+  { name: "Breakfast", start: 5, end: 10 },   // 5AM - 10AM
+  { name: "Lunch", start: 11, end: 14 },      // 11AM - 2PM
+  { name: "Dinner", start: 17, end: 21 },     // 5PM - 9PM
+  { name: "Spare", start: 22, end: 4 }        // 10PM - 4AM (wraps around midnight)
 ];
 
 const categories = ["Breakfast", "Lunch", "Dinner", "Spare"];
@@ -135,22 +136,26 @@ function showCurrentRecipe(recipes) {
   recDiv.appendChild(h3);
 
   // Ingredients
-  const ing = document.createElement('ul');
-  r.ingredients.forEach(ingredient => {
-    const li = document.createElement('li');
-    li.textContent = ingredient;
-    ing.appendChild(li);
-  });
-  recDiv.appendChild(ing);
+  if (r.ingredients) {
+    const ing = document.createElement('ul');
+    r.ingredients.forEach(ingredient => {
+      const li = document.createElement('li');
+      li.textContent = ingredient;
+      ing.appendChild(li);
+    });
+    recDiv.appendChild(ing);
+  }
 
-  // Steps
-  const steps = document.createElement('ol');
-  r.steps.forEach(step => {
-    const li = document.createElement('li');
-    li.textContent = step;
-    steps.appendChild(li);
-  });
-  recDiv.appendChild(steps);
+  // Steps lp
+  if (r.steps) {
+    const steps = document.createElement('ol');
+    r.steps.forEach(step => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      steps.appendChild(li);
+    });
+    recDiv.appendChild(steps);
+  }
 
   catDiv.appendChild(recDiv);
   container.appendChild(catDiv);
