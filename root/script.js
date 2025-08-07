@@ -24,18 +24,30 @@ function getCurrentMeal() {
 }
 
 // Day index for rotation (0-3 for 4 days)
-let dayIndex = 0;
+function getDayIndex() {
+  // Use UTC date for consistency; change to local if you prefer
+  const startDate = new Date('2024-01-01'); // Set your rotation start date here
+  const today = new Date();
+  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  return diffDays % 4;
+}
+let dayIndex = getDayIndex();
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('refreshBtn').addEventListener('click', () => loadRecipes(true));
   document.getElementById('optionBtn').addEventListener('click', () => {
+    // Manual override: advance to next day in rotation
     dayIndex = (dayIndex + 1) % 4;
     loadRecipes(false, true);
   });
+  // Always set dayIndex to current day on load
+  dayIndex = getDayIndex();
   loadRecipes();
 
-  // Auto-refresh every 5 minutes (300000 ms)
-  setInterval(() => loadRecipes(), 1200000);
+  setInterval(() => {
+    dayIndex = getDayIndex();
+    loadRecipes();
+  }, 1200000); // 20 min auto-refresh
 });
 
 async function loadRecipes(forceRefresh=false, keepDay=false) {
