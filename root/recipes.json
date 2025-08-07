@@ -1,170 +1,176 @@
 {
   "Breakfast": [
-    {
-      "name": "Oats Upma",
-      "ingredients": ["1 cup rolled oats", "1/2 cup mixed vegetables", "1/2 onion", "1 green chili", "1 tsp olive oil", "Salt", "Lemon juice", "Coriander"],
-      "steps": ["Dry roast oats.", "Sauté onion and chili in olive oil.", "Add vegetables and cook.", "Add oats, salt, and little water.", "Cook for 2-3 min.", "Finish with lemon juice and coriander."]
-    },
-    {
-      "name": "Moong Dal Chilla",
-      "ingredients": ["1/2 cup split yellow moong dal", "1/4 cup chopped spinach", "1/4 cup grated carrot", "Salt", "Black pepper", "1 tsp olive oil"],
-      "steps": ["Soak and blend dal.", "Mix with veggies and spices.", "Spread on pan and cook with minimal oil."]
-    },
-    {
-      "name": "Vegetable Poha",
-      "ingredients": ["1 cup poha (flattened rice)", "1/2 cup mixed vegetables", "1 onion", "1 tsp mustard seeds", "1 tsp olive oil", "Salt", "Lemon juice"],
-      "steps": ["Rinse poha.", "Sauté mustard seeds and onion.", "Add vegetables and cook.", "Add poha and salt.", "Mix and finish with lemon juice."]
-    },
-    {
-      "name": "Sprouted Moong Salad",
-      "ingredients": ["1 cup sprouted moong", "1 tomato", "1 cucumber", "Salt", "Lemon juice", "Coriander"],
-      "steps": ["Mix all ingredients.", "Season and serve chilled."]
-    },
-    {
-      "name": "Fruit & Nut Yogurt",
-      "ingredients": ["1 cup low-fat yogurt", "1/2 apple", "1/2 banana", "1 tbsp chopped walnuts", "Honey (optional)"],
-      "steps": ["Chop fruits.", "Mix with yogurt and nuts.", "Drizzle honey if desired."]
-    },
-    {
-      "name": "Besan Cheela",
-      "ingredients": ["1 cup besan (chickpea flour)", "1/4 cup chopped onion", "1/4 cup tomato", "Coriander", "Salt", "Black pepper", "1 tsp olive oil"],
-      "steps": ["Mix besan with veggies and spices.", "Spread on pan and cook with minimal oil."]
-    },
-    {
-      "name": "Banana Peanut Butter Toast",
-      "ingredients": ["2 slices whole grain bread", "1 banana", "1 tbsp peanut butter"],
-      "steps": ["Toast bread.", "Spread peanut butter.", "Top with banana slices."]
-    },
-    {
-      "name": "Vegetable Daliya",
-      "ingredients": ["1/2 cup broken wheat (daliya)", "1 cup mixed vegetables", "1/2 tsp cumin seeds", "1 tsp olive oil", "Salt", "Black pepper"],
-      "steps": ["Roast daliya.", "Sauté cumin and veggies in oil.", "Add daliya and water.", "Cook until soft.", "Season and serve."]
-    }
+    [
+      {
+        "type": "International",
+        "name": "Avocado Toast",
+        "ingredients": ["2 slices whole grain bread", "1/2 avocado", "Salt", "Pepper", "Lemon juice"],
+        "steps": ["Toast bread.", "Mash avocado with salt, pepper, lemon.", "Spread on toast."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Moong Dal Chilla",
+        "ingredients": ["1/2 cup split yellow moong dal", "1/4 cup chopped spinach", "1/4 cup grated carrot", "Salt", "Black pepper", "1 tsp olive oil"],
+        "steps": ["Soak and blend dal.", "Mix with veggies and spices.", "Spread on pan and cook with minimal oil."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Fruit & Nut Yogurt",
+        "ingredients": ["1 cup low-fat yogurt", "1/2 apple", "1/2 banana", "1 tbsp chopped walnuts", "Honey (optional)"],
+        "steps": ["Chop fruits.", "Mix with yogurt and nuts.", "Drizzle honey if desired."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Besan Cheela",
+        "ingredients": ["1 cup besan (chickpea flour)", "1/4 cup chopped onion", "1/4 cup tomato", "Coriander", "Salt", "Black pepper", "1 tsp olive oil"],
+        "steps": ["Mix besan with veggies and spices.", "Spread on pan and cook with minimal oil."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Banana Peanut Butter Toast",
+        "ingredients": ["2 slices whole grain bread", "1 banana", "1 tbsp peanut butter"],
+        "steps": ["Toast bread.", "Spread peanut butter.", "Top with banana slices."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Vegetable Poha",
+        "ingredients": ["1 cup poha (flattened rice)", "1/2 cup mixed vegetables", "1 onion", "1 tsp mustard seeds", "1 tsp olive oil", "Salt", "Lemon juice"],
+        "steps": ["Rinse poha.", "Sauté mustard seeds and onion.", "Add vegetables and cook.", "Add poha and salt.", "Mix and finish with lemon juice."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Oats Upma",
+        "ingredients": ["1 cup rolled oats", "1/2 cup mixed vegetables", "1/2 onion", "1 green chili", "1 tsp olive oil", "Salt", "Lemon juice", "Coriander"],
+        "steps": ["Dry roast oats.", "Sauté onion and chili in olive oil.", "Add vegetables and cook.", "Add oats, salt, and little water.", "Cook for 2-3 min.", "Finish with lemon juice and coriander."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Vegetable Daliya",
+        "ingredients": ["1/2 cup broken wheat (daliya)", "1 cup mixed vegetables", "1/2 tsp cumin seeds", "1 tsp olive oil", "Salt", "Black pepper"],
+        "steps": ["Roast daliya.", "Sauté cumin and veggies in oil.", "Add daliya and water.", "Cook until soft.", "Season and serve."]
+      }
+    ]
   ],
   "Lunch": [
-    {
-      "name": "Brown Rice & Rajma Bowl",
-      "ingredients": ["1 cup cooked brown rice", "1/2 cup cooked rajma (kidney beans)", "1/2 onion", "1 tomato", "Spices (cumin, coriander, turmeric)", "Salt", "Coriander"],
-      "steps": ["Sauté onion and tomato.", "Add spices and cooked rajma.", "Simmer for 5 min.", "Serve over brown rice, garnish with coriander."]
-    },
-    {
-      "name": "Grilled Tofu Wrap",
-      "ingredients": ["Whole wheat tortilla", "100g tofu", "Lettuce", "Tomato", "Cucumber", "Mint chutney", "Black pepper"],
-      "steps": ["Grill tofu slices.", "Fill tortilla with veggies and tofu.", "Add mint chutney and pepper.", "Wrap and serve."]
-    },
-    {
-      "name": "Chickpea Salad",
-      "ingredients": ["1 cup cooked chickpeas", "1 tomato", "1 cucumber", "1/2 onion", "Salt", "Lemon juice", "Coriander"],
-      "steps": ["Mix all ingredients.", "Season and serve chilled."]
-    },
-    {
-      "name": "Vegetable Khichdi",
-      "ingredients": ["1/2 cup rice", "1/4 cup moong dal", "1 cup mixed vegetables", "Spices (cumin, turmeric)", "Salt"],
-      "steps": ["Wash rice and dal.", "Cook with vegetables and spices until soft."]
-    },
-    {
-      "name": "Palak Paneer (Low Fat)",
-      "ingredients": ["100g low-fat paneer", "2 cups spinach", "1 tomato", "1 onion", "Spices (cumin, coriander, turmeric)", "Salt"],
-      "steps": ["Blanch and blend spinach.", "Sauté onion and tomato.", "Add spices and paneer.", "Add spinach puree, simmer for 5 min."]
-    },
-    {
-      "name": "Quinoa Vegetable Bowl",
-      "ingredients": ["1 cup cooked quinoa", "1 cup mixed vegetables", "Salt", "Black pepper", "Lemon juice"],
-      "steps": ["Cook quinoa.", "Mix with steamed vegetables.", "Season and serve."]
-    },
-    {
-      "name": "Lentil Soup",
-      "ingredients": ["1/2 cup masoor dal", "1 tomato", "1 carrot", "1/2 onion", "Spices (cumin, turmeric)", "Salt"],
-      "steps": ["Cook dal and vegetables with spices.", "Blend if desired.", "Serve hot."]
-    },
-    {
-      "name": "Stuffed Bell Peppers",
-      "ingredients": ["2 bell peppers", "1/2 cup cooked rice", "1/2 cup mixed vegetables", "Spices", "Salt"],
-      "steps": ["Mix rice, veggies, and spices.", "Stuff peppers.", "Bake until tender."]
-    }
+    [
+      {
+        "type": "International",
+        "name": "Quinoa Salad",
+        "ingredients": ["1 cup cooked quinoa", "1/2 cup cherry tomatoes", "1/2 cucumber", "1 tbsp olive oil", "Salt", "Pepper", "Lemon juice"],
+        "steps": ["Chop veggies.", "Mix with quinoa, olive oil, salt, pepper, lemon."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Brown Rice & Rajma Bowl",
+        "ingredients": ["1 cup cooked brown rice", "1/2 cup cooked rajma (kidney beans)", "1/2 onion", "1 tomato", "Spices (cumin, coriander, turmeric)", "Salt", "Coriander"],
+        "steps": ["Sauté onion and tomato.", "Add spices and cooked rajma.", "Simmer for 5 min.", "Serve over brown rice, garnish with coriander."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Grilled Tofu Wrap",
+        "ingredients": ["Whole wheat tortilla", "100g tofu", "Lettuce", "Tomato", "Cucumber", "Mint chutney", "Black pepper"],
+        "steps": ["Grill tofu slices.", "Fill tortilla with veggies and tofu.", "Add mint chutney and pepper.", "Wrap and serve."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Vegetable Khichdi",
+        "ingredients": ["1/2 cup rice", "1/4 cup moong dal", "1 cup mixed vegetables", "Spices (cumin, turmeric)", "Salt"],
+        "steps": ["Wash rice and dal.", "Cook with vegetables and spices until soft."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Chickpea Salad",
+        "ingredients": ["1 cup cooked chickpeas", "1 tomato", "1 cucumber", "1/2 onion", "Salt", "Lemon juice", "Coriander"],
+        "steps": ["Mix all ingredients.", "Season and serve chilled."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Palak Paneer (Low Fat)",
+        "ingredients": ["100g low-fat paneer", "2 cups spinach", "1 tomato", "1 onion", "Spices (cumin, coriander, turmeric)", "Salt"],
+        "steps": ["Blanch and blend spinach.", "Sauté onion and tomato.", "Add spices and paneer.", "Add spinach puree, simmer for 5 min."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Stuffed Bell Peppers",
+        "ingredients": ["2 bell peppers", "1/2 cup cooked rice", "1/2 cup mixed vegetables", "Spices", "Salt"],
+        "steps": ["Mix rice, veggies, and spices.", "Stuff peppers.", "Bake until tender."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Lentil Soup",
+        "ingredients": ["1/2 cup masoor dal", "1 tomato", "1 carrot", "1/2 onion", "Spices (cumin, turmeric)", "Salt"],
+        "steps": ["Cook dal and vegetables with spices.", "Blend if desired.", "Serve hot."]
+      }
+    ]
   ],
   "Dinner": [
-    {
-      "name": "Vegetable Curry",
-      "ingredients": ["1 cup mixed vegetables", "1 tomato", "1 onion", "Spices (cumin, coriander, turmeric)", "Salt", "1 tsp olive oil"],
-      "steps": ["Sauté onion and tomato.", "Add spices and vegetables.", "Cook until tender."]
-    },
-    {
-      "name": "Tofu Stir Fry",
-      "ingredients": ["100g tofu", "1 cup mixed vegetables", "Soy sauce (low sodium)", "Black pepper", "1 tsp olive oil"],
-      "steps": ["Sauté tofu and vegetables in olive oil.", "Add soy sauce and pepper.", "Cook for 5 min."]
-    },
-    {
-      "name": "Dal Tadka",
-      "ingredients": ["1/2 cup toor dal", "1 tomato", "1/2 onion", "Spices (cumin, turmeric)", "Salt", "1 tsp olive oil"],
-      "steps": ["Cook dal with tomato and onion.", "Prepare tadka with spices and oil.", "Mix and serve."]
-    },
-    {
-      "name": "Bhindi Masala",
-      "ingredients": ["1 cup okra (bhindi)", "1 onion", "1 tomato", "Spices (coriander, cumin)", "Salt", "1 tsp olive oil"],
-      "steps": ["Sauté onion and tomato.", "Add spices and bhindi.", "Cook until tender."]
-    },
-    {
-      "name": "Chana Masala",
-      "ingredients": ["1 cup cooked chickpeas", "1 onion", "1 tomato", "Spices (coriander, cumin, turmeric)", "Salt", "1 tsp olive oil"],
-      "steps": ["Sauté onion and tomato.", "Add spices and chickpeas.", "Simmer for 10 min."]
-    },
-    {
-      "name": "Methi Thepla",
-      "ingredients": ["1 cup whole wheat flour", "1/2 cup chopped fenugreek leaves", "Spices", "Salt", "1 tsp olive oil"],
-      "steps": ["Mix all ingredients.", "Roll into flatbreads.", "Cook on pan with minimal oil."]
-    },
-    {
-      "name": "Vegetable Pulao",
-      "ingredients": ["1 cup rice", "1 cup mixed vegetables", "Spices (cumin, bay leaf)", "Salt"],
-      "steps": ["Sauté spices.", "Add rice and vegetables.", "Cook until rice is done."]
-    },
-    {
-      "name": "Paneer Bhurji (Low Fat)",
-      "ingredients": ["100g low-fat paneer", "1 onion", "1 tomato", "Spices (cumin, turmeric)", "Salt", "Coriander"],
-      "steps": ["Sauté onion and tomato.", "Add spices and crumbled paneer.", "Cook for 5 min.", "Garnish with coriander."]
-    }
-  ],
-  "Spare": [
-    {
-      "name": "Roasted Chickpeas",
-      "ingredients": ["1 cup cooked chickpeas", "1 tsp olive oil", "Salt", "Paprika"],
-      "steps": ["Toss chickpeas with oil and spices.", "Roast at 400°F for 20 min."]
-    },
-    {
-      "name": "Fruit Chaat",
-      "ingredients": ["1 cup assorted fruits", "Chaat masala", "Lemon juice"],
-      "steps": ["Chop fruits.", "Mix with chaat masala and lemon juice."]
-    },
-    {
-      "name": "Cucumber Sticks with Hummus",
-      "ingredients": ["1 cucumber", "1/2 cup hummus"],
-      "steps": ["Cut cucumber into sticks.", "Serve with hummus."]
-    },
-    {
-      "name": "Sprouted Moong Snack",
-      "ingredients": ["1 cup sprouted moong", "Salt", "Lemon juice", "Coriander"],
-      "steps": ["Mix all ingredients.", "Serve chilled."]
-    },
-    {
-      "name": "Baked Sweet Potato Fries",
-      "ingredients": ["1 sweet potato", "1 tsp olive oil", "Salt", "Paprika"],
-      "steps": ["Cut sweet potato into fries.", "Toss with oil and spices.", "Bake at 425°F for 20 min."]
-    },
-    {
-      "name": "Low-Fat Yogurt with Berries",
-      "ingredients": ["1 cup low-fat yogurt", "1/2 cup mixed berries"],
-      "steps": ["Mix berries into yogurt.", "Serve chilled."]
-    },
-    {
-      "name": "Apple Slices with Peanut Butter",
-      "ingredients": ["1 apple", "1 tbsp peanut butter"],
-      "steps": ["Slice apple.", "Serve with peanut butter."]
-    },
-    {
-      "name": "Carrot Sticks with Mint Dip",
-      "ingredients": ["2 carrots", "1/4 cup mint chutney"],
-      "steps": ["Cut carrots into sticks.", "Serve with mint chutney."]
-    }
+    [
+      {
+        "type": "International",
+        "name": "Grilled Salmon & Veggies",
+        "ingredients": ["100g salmon fillet", "1 cup mixed vegetables", "1 tsp olive oil", "Salt", "Pepper", "Lemon juice"],
+        "steps": ["Season salmon.", "Grill salmon and veggies.", "Serve with lemon."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Vegetable Curry",
+        "ingredients": ["1 cup mixed vegetables", "1 tomato", "1 onion", "Spices (cumin, coriander, turmeric)", "Salt", "1 tsp olive oil"],
+        "steps": ["Sauté onion and tomato.", "Add spices and vegetables.", "Cook until tender."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Tofu Stir Fry",
+        "ingredients": ["100g tofu", "1 cup mixed vegetables", "Soy sauce (low sodium)", "Black pepper", "1 tsp olive oil"],
+        "steps": ["Sauté tofu and vegetables in olive oil.", "Add soy sauce and pepper.", "Cook for 5 min."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Dal Tadka",
+        "ingredients": ["1/2 cup toor dal", "1 tomato", "1/2 onion", "Spices (cumin, turmeric)", "Salt", "1 tsp olive oil"],
+        "steps": ["Cook dal with tomato and onion.", "Prepare tadka with spices and oil.", "Mix and serve."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Vegetable Pulao",
+        "ingredients": ["1 cup rice", "1 cup mixed vegetables", "Spices (cumin, bay leaf)", "Salt"],
+        "steps": ["Sauté spices.", "Add rice and vegetables.", "Cook until rice is done."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Bhindi Masala",
+        "ingredients": ["1 cup okra (bhindi)", "1 onion", "1 tomato", "Spices (coriander, cumin)", "Salt", "1 tsp olive oil"],
+        "steps": ["Sauté onion and tomato.", "Add spices and bhindi.", "Cook until tender."]
+      }
+    ],
+    [
+      {
+        "type": "International",
+        "name": "Paneer & Spinach Wrap",
+        "ingredients": ["Whole wheat tortilla", "100g low-fat paneer", "1 cup spinach", "1 tomato", "Mint chutney"],
+        "steps": ["Sauté spinach and tomato.", "Fill tortilla with paneer, spinach, and chutney.", "Wrap and serve."]
+      },
+      {
+        "type": "North Indian",
+        "name": "Chana Masala",
+        "ingredients": ["1 cup cooked chickpeas", "1 onion", "1 tomato", "Spices (coriander, cumin, turmeric)", "Salt", "1 tsp olive oil"],
+        "steps": ["Sauté onion and tomato.", "Add spices and chickpeas.", "Simmer for 10 min."]
+      }
+    ]
   ]
 }

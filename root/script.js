@@ -122,45 +122,52 @@ function showCurrentRecipe(recipes) {
     return;
   }
 
-  // Show only one recipe, optionIndex 0 or 1
-  const idx = optionIndex % catRecipes.length;
-  const r = catRecipes[idx];
-
   const catDiv = document.createElement('div');
   catDiv.className = 'category';
   const h2 = document.createElement('h2');
   h2.textContent = meal;
   catDiv.appendChild(h2);
 
-  const recDiv = document.createElement('div');
-  recDiv.className = 'recipe';
-  const h3 = document.createElement('h3');
-  h3.textContent = r.name;
-  recDiv.appendChild(h3);
+  const recipeRow = document.createElement('div');
+  recipeRow.style.display = 'flex';
+  recipeRow.style.flexDirection = 'row';
+  recipeRow.style.gap = '24px';
 
-  // Ingredients
-  if (r.ingredients) {
-    const ing = document.createElement('ul');
-    r.ingredients.forEach(ingredient => {
-      const li = document.createElement('li');
-      li.textContent = ingredient;
-      ing.appendChild(li);
-    });
-    recDiv.appendChild(ing);
-  }
+  catRecipes.forEach(r => {
+    const recDiv = document.createElement('div');
+    recDiv.className = 'recipe';
+    recDiv.style.flex = '1';
 
-  // Steps lp
-  if (r.steps) {
-    const steps = document.createElement('ol');
-    r.steps.forEach(step => {
-      const li = document.createElement('li');
-      li.textContent = step;
-      steps.appendChild(li);
-    });
-    recDiv.appendChild(steps);
-  }
+    const h3 = document.createElement('h3');
+    h3.textContent = `${r.type}: ${r.name}`;
+    recDiv.appendChild(h3);
 
-  catDiv.appendChild(recDiv);
+    // Ingredients
+    if (r.ingredients) {
+      const ing = document.createElement('ul');
+      r.ingredients.forEach(ingredient => {
+        const li = document.createElement('li');
+        li.textContent = ingredient;
+        ing.appendChild(li);
+      });
+      recDiv.appendChild(ing);
+    }
+
+    // Steps
+    if (r.steps) {
+      const steps = document.createElement('ol');
+      r.steps.forEach(step => {
+        const li = document.createElement('li');
+        li.textContent = step;
+        steps.appendChild(li);
+      });
+      recDiv.appendChild(steps);
+    }
+
+    recipeRow.appendChild(recDiv);
+  });
+
+  catDiv.appendChild(recipeRow);
   container.appendChild(catDiv);
 }
 
