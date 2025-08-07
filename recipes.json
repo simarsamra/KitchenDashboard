@@ -1,0 +1,170 @@
+{
+  "Breakfast": [
+    {
+      "name": "Classic Pancakes",
+      "ingredients": ["2 cups flour", "2 eggs", "1.5 cups milk", "2 tbsp sugar", "1 tsp baking powder"],
+      "steps": ["Mix dry ingredients.", "Whisk in eggs and milk.", "Cook on griddle until golden."]
+    },
+    {
+      "name": "Avocado Toast",
+      "ingredients": ["2 slices whole grain bread", "1 avocado", "Salt", "Pepper", "Chili flakes"],
+      "steps": ["Toast bread.", "Mash avocado onto toast.", "Season and sprinkle chili flakes."]
+    },
+    {
+      "name": "Oatmeal Bowl",
+      "ingredients": ["1 cup oats", "2 cups water/milk", "Banana slices", "Honey", "Nuts"],
+      "steps": ["Cook oats in water/milk.", "Top with banana, honey, and nuts."]
+    },
+    {
+      "name": "Berry Yogurt Parfait",
+      "ingredients": ["1 cup yogurt", "1/2 cup mixed berries", "Granola"],
+      "steps": ["Layer yogurt, berries, and granola in glass."]
+    },
+    {
+      "name": "Scrambled Eggs",
+      "ingredients": ["3 eggs", "Salt", "Butter", "Chives"],
+      "steps": ["Beat eggs.", "Cook in butter.", "Season and garnish with chives."]
+    },
+    {
+      "name": "Breakfast Burrito",
+      "ingredients": ["Tortilla", "Egg", "Cheese", "Salsa", "Beans"],
+      "steps": ["Scramble egg.", "Fill tortilla with ingredients.", "Roll and serve."]
+    },
+    {
+      "name": "Fruit Salad",
+      "ingredients": ["Assorted fresh fruits", "Mint", "Lime juice"],
+      "steps": ["Chop fruits.", "Mix with mint and lime."]
+    },
+    {
+      "name": "Egg Muffins",
+      "ingredients": ["Eggs", "Diced veggies", "Cheese", "Salt"],
+      "steps": ["Mix all.", "Pour into muffin tin.", "Bake at 350°F for 20 min."]
+    }
+  ],
+  "Lunch": [
+    {
+      "name": "Grilled Cheese",
+      "ingredients": ["2 slices bread", "Cheddar cheese", "Butter"],
+      "steps": ["Butter bread.", "Add cheese.", "Grill until golden."]
+    },
+    {
+      "name": "Chicken Salad",
+      "ingredients": ["Cooked chicken", "Lettuce", "Tomatoes", "Cucumber", "Dressing"],
+      "steps": ["Chop veggies and chicken.", "Mix and toss with dressing."]
+    },
+    {
+      "name": "Veggie Wrap",
+      "ingredients": ["Tortilla", "Hummus", "Assorted veggies"],
+      "steps": ["Spread hummus on tortilla.", "Add veggies.", "Wrap and serve."]
+    },
+    {
+      "name": "Quinoa Bowl",
+      "ingredients": ["Quinoa", "Roasted veggies", "Feta cheese"],
+      "steps": ["Cook quinoa.", "Top with veggies and cheese."]
+    },
+    {
+      "name": "Tomato Soup",
+      "ingredients": ["Tomatoes", "Onion", "Garlic", "Cream"],
+      "steps": ["Cook tomatoes/onion/garlic.", "Blend and add cream."]
+    },
+    {
+      "name": "Turkey Sandwich",
+      "ingredients": ["Whole wheat bread", "Turkey slices", "Lettuce", "Mustard"],
+      "steps": ["Layer ingredients on bread.", "Serve."]
+    },
+    {
+      "name": "Caesar Salad",
+      "ingredients": ["Romaine", "Croutons", "Parmesan", "Caesar dressing"],
+      "steps": ["Toss lettuce with dressing.", "Add toppings."]
+    },
+    {
+      "name": "Rice Bowl",
+      "ingredients": ["Cooked rice", "Steamed veggies", "Soy sauce"],
+      "steps": ["Top rice with veggies.", "Drizzle soy sauce."]
+    }
+  ],
+  "Dinner": [
+    {
+      "name": "Spaghetti Marinara",
+      "ingredients": ["Spaghetti", "Tomato sauce", "Garlic", "Basil"],
+      "steps": ["Cook spaghetti.", "Heat sauce.", "Combine and serve."]
+    },
+    {
+      "name": "Grilled Salmon",
+      "ingredients": ["Salmon fillet", "Lemon", "Salt", "Pepper"],
+      "steps": ["Season salmon.", "Grill until cooked.", "Squeeze lemon."]
+    },
+    {
+      "name": "Chicken Stir Fry",
+      "ingredients": ["Chicken breast", "Veggies", "Soy sauce", "Rice"],
+      "steps": ["Cook chicken.", "Add veggies.", "Stir fry with soy sauce.", "Serve over rice."]
+    },
+    {
+      "name": "Veggie Curry",
+      "ingredients": ["Mixed veggies", "Curry paste", "Coconut milk"],
+      "steps": ["Cook veggies.", "Add paste and coconut milk.", "Simmer and serve."]
+    },
+    {
+      "name": "Beef Tacos",
+      "ingredients": ["Taco shells", "Ground beef", "Lettuce", "Cheese", "Salsa"],
+      "steps": ["Cook beef.", "Fill shells with ingredients."]
+    },
+    {
+      "name": "Stuffed Peppers",
+      "ingredients": ["Bell peppers", "Rice", "Ground meat", "Tomato sauce"],
+      "steps": ["Stuff peppers.", "Bake until tender."]
+    },
+    {
+      "name": "Baked Ziti",
+      "ingredients": ["Ziti pasta", "Marinara", "Mozzarella", "Ricotta"],
+      "steps": ["Cook pasta.", "Layer with cheese and sauce.", "Bake."]
+    },
+    {
+      "name": "Teriyaki Tofu",
+      "ingredients": ["Tofu", "Teriyaki sauce", "Broccoli", "Rice"],
+      "steps": ["Cook tofu.", "Add sauce and broccoli.", "Serve with rice."]
+    }
+  ],
+  "Spare": [
+    {
+      "name": "Granola Bars",
+      "ingredients": ["Oats", "Honey", "Nuts", "Dried fruit"],
+      "steps": ["Mix all.", "Press into pan.", "Bake at 350°F for 15 min."]
+    },
+    {
+      "name": "Smoothie",
+      "ingredients": ["Banana", "Berries", "Yogurt", "Milk"],
+      "steps": ["Blend all ingredients until smooth."]
+    },
+    {
+      "name": "Quesadilla",
+      "ingredients": ["Tortilla", "Cheese", "Beans"],
+      "steps": ["Fill tortilla.", "Cook on skillet until cheese melts."]
+    },
+    {
+      "name": "Egg Salad",
+      "ingredients": ["Boiled eggs", "Mayo", "Celery", "Salt", "Pepper"],
+      "steps": ["Chop eggs.", "Mix with other ingredients."]
+    },
+    {
+      "name": "Fruit Popsicles",
+      "ingredients": ["Fruit juice", "Chopped fruit"],
+      "steps": ["Mix juice and fruit.", "Freeze in molds."]
+    },
+    {
+      "name": "Pizza Toast",
+      "ingredients": ["Bread", "Tomato sauce", "Cheese", "Pepperoni"],
+      "steps": ["Top bread with sauce and cheese.", "Bake until cheese melts."]
+    },
+    {
+      "name": "Hummus Dip",
+      "ingredients": ["Chickpeas", "Tahini", "Lemon juice", "Garlic"],
+      "steps": ["Blend all ingredients.", "Serve with veggies."]
+    },
+    {
+      "name": "Yogurt Bark",
+      "ingredients": ["Yogurt", "Honey", "Berries"],
+      "steps": ["Spread yogurt.", "Top with honey and berries.", "Freeze."]
+    }
+  ]
+}
