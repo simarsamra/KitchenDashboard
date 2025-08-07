@@ -21,15 +21,42 @@ const FALLBACK_RECIPES = {
   ]
 };
 
+const MEAL_TIMES = [
+  { name: "Breakfast", start: 5, end: 10 },   // 5am - 10am
+  { name: "Lunch", start: 11, end: 15 },      // 11am - 3pm
+  { name: "Dinner", start: 16, end: 21 },     // 4pm - 9pm
+  { name: "Spare", start: 22, end: 4 }        // 10pm - 4am (wraps around midnight)
+];
+
 const categories = ["Breakfast", "Lunch", "Dinner", "Spare"];
+
+function getCurrentMeal() {
+  const hour = new Date().getHours();
+  for (const meal of MEAL_TIMES) {
+    if (meal.start <= meal.end) {
+      if (hour >= meal.start && hour <= meal.end) return meal.name;
+    } else {
+      // Wrap around midnight
+      if (hour >= meal.start || hour <= meal.end) return meal.name;
+    }
+  }
+  return "Breakfast";
+}
+
+let optionIndex = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   const refreshBtn = document.getElementById('refreshBtn');
   refreshBtn.addEventListener('click', () => loadRecipes(true));
+  const optionBtn = document.getElementById('optionBtn');
+  optionBtn.addEventListener('click', () => {
+    optionIndex = (optionIndex + 1) % 2;
+    loadRecipes(false, true);
+  });
   loadRecipes();
 });
 
-async function loadRecipes(forceRefresh=false) {
+async function loadRecipes(forceRefresh=false, keepOption=false) {
   setStatus('Loading...');
   let recipes;
   
@@ -74,62 +101,59 @@ async function loadRecipes(forceRefresh=false) {
     }
   }
 
-  showRecipes(recipes);
+  // If not keeping option, reset to first recipe
+  if (!keepOption) optionIndex = 0;
+
+  showCurrentRecipe(recipes);
 }
 
-function showRecipes(recipes) {
+function showCurrentRecipe(recipes) {
   const container = document.getElementById('categories');
   container.innerHTML = '';
 
-  const dayIndex = (new Date()).getDate() % 4; // 0..3
+  const meal = getCurrentMeal();
+  const catRecipes = recipes[meal] || [];
+  if (catRecipes.length === 0) {
+    container.textContent = `No recipes found for ${meal}.`;
+    return;
+  }
 
-  categories.forEach(category => {
-    const catDiv = document.createElement('div');
-    catDiv.className = 'category';
-    const h2 = document.createElement('h2');
-    h2.textContent = category;
-    catDiv.appendChild(h2);
+  // Show only one recipe, optionIndex 0 or 1
+  const idx = optionIndex % catRecipes.length;
+  const r = catRecipes[idx];
 
-    const recipeList = document.createElement('div');
-    recipeList.className = 'recipe-list';
+  const catDiv = document.createElement('div');
+  catDiv.className = 'category';
+  const h2 = document.createElement('h2');
+  h2.textContent = meal;
+  catDiv.appendChild(h2);
 
-    // Show 2 rotated recipes per category
-    const catRecipes = recipes[category] || [];
-    for (let i = 0; i < 2; i++) {
-      // Pick recipes in rotation
-      const idx = (dayIndex * 2 + i) % catRecipes.length;
-      if (!catRecipes[idx]) continue;
-      const r = catRecipes[idx];
+  const recDiv = document.createElement('div');
+  recDiv.className = 'recipe';
+  const h3 = document.createElement('h3');
+  h3.textContent = r.name;
+  recDiv.appendChild(h3);
 
-      const recDiv = document.createElement('div');
-      recDiv.className = 'recipe';
-      const h3 = document.createElement('h3');
-      h3.textContent = r.name;
-      recDiv.appendChild(h3);
-
-      // Ingredients
-      const ing = document.createElement('ul');
-      r.ingredients.forEach(ingredient => {
-        const li = document.createElement('li');
-        li.textContent = ingredient;
-        ing.appendChild(li);
-      });
-      recDiv.appendChild(ing);
-
-      // Steps
-      const steps = document.createElement('ol');
-      r.steps.forEach(step => {
-        const li = document.createElement('li');
-        li.textContent = step;
-        steps.appendChild(li);
-      });
-      recDiv.appendChild(steps);
-
-      recipeList.appendChild(recDiv);
-    }
-    catDiv.appendChild(recipeList);
-    container.appendChild(catDiv);
+  // Ingredients
+  const ing = document.createElement('ul');
+  r.ingredients.forEach(ingredient => {
+    const li = document.createElement('li');
+    li.textContent = ingredient;
+    ing.appendChild(li);
   });
+  recDiv.appendChild(ing);
+
+  // Steps
+  const steps = document.createElement('ol');
+  r.steps.forEach(step => {
+    const li = document.createElement('li');
+    li.textContent = step;
+    steps.appendChild(li);
+  });
+  recDiv.appendChild(steps);
+
+  catDiv.appendChild(recDiv);
+  container.appendChild(catDiv);
 }
 
 function setStatus(msg) {
