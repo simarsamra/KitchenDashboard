@@ -72,6 +72,7 @@ async function loadRecipes() {
 
   showCurrentRecipe(recipes);
   showPrepSuggestion(recipes);
+  showGroceryList(recipes);
 }
 
 function showCurrentRecipe(recipes) {
@@ -185,6 +186,45 @@ function showPrepSuggestion(recipes) {
   });
 
   catDiv.appendChild(recipeRow);
+  container.appendChild(catDiv);
+}
+
+function showGroceryList(recipes) {
+  const container = document.getElementById('grocery-list');
+  container.innerHTML = '';
+
+  const dayIndex = getDayIndex();
+  const meals = ["Breakfast", "Lunch", "Dinner"];
+  let allIngredients = [];
+
+  meals.forEach(meal => {
+    const mealArr = recipes[meal] || [];
+    const todayRecipes = mealArr[dayIndex % mealArr.length];
+    if (Array.isArray(todayRecipes)) {
+      todayRecipes.forEach(r => {
+        if (Array.isArray(r.ingredients)) {
+          allIngredients = allIngredients.concat(r.ingredients);
+        }
+      });
+    }
+  });
+
+  // Remove duplicates
+  const uniqueIngredients = [...new Set(allIngredients)];
+
+  const catDiv = document.createElement('div');
+  catDiv.className = 'category';
+  const h2 = document.createElement('h2');
+  h2.textContent = 'Grocery List for Today';
+  catDiv.appendChild(h2);
+
+  const ul = document.createElement('ul');
+  uniqueIngredients.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+  });
+  catDiv.appendChild(ul);
   container.appendChild(catDiv);
 }
 
