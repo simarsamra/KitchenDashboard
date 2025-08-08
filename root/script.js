@@ -24,30 +24,17 @@ function getCurrentMeal() {
 }
 
 // Day index for rotation (0-3 for 4 days)
-function getDayIndex() {
-  // Use UTC date for consistency; change to local if you prefer
-  const startDate = new Date('2024-01-01'); // Set your rotation start date here
-  const today = new Date();
-  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
-  return diffDays % 4;
-}
-let dayIndex = getDayIndex();
+let dayIndex = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('refreshBtn').addEventListener('click', () => loadRecipes(true));
   document.getElementById('optionBtn').addEventListener('click', () => {
-    // Manual override: advance to next day in rotation
     dayIndex = (dayIndex + 1) % 4;
     loadRecipes(false, true);
   });
-  // Always set dayIndex to current day on load
-  dayIndex = getDayIndex();
   loadRecipes();
 
-  setInterval(() => {
-    dayIndex = getDayIndex();
-    loadRecipes();
-  }, 1200000); // 20 min auto-refresh
+  setInterval(() => loadRecipes(), 1200000); // 20 min auto-refresh
 });
 
 async function loadRecipes(forceRefresh=false, keepDay=false) {
@@ -62,7 +49,22 @@ async function loadRecipes(forceRefresh=false, keepDay=false) {
       setStatus('Loaded from GitHub');
     } else throw new Error('GitHub fetch failed');
   } catch (e) {
-    setStatus('GitHub fetch failed, trying bundled file...');
+    setStatus('GitHub fetch failed, trying localStorage...');
+  }
+
+  if (!recipes) {
+    try {
+      const stored = localStorage.getItem(LS_KEY);
+      if (stored) {
+        recipes = JSON.parse(stored);
+        setStatus('Loaded from localStorage');
+      }
+    } catch (e) {
+      setStatus('localStorage load failed, using fallback...');
+    }
+  }
+
+  if (!recipes) {
     try {
       const resp = await fetch('recipes.json');
       if (resp.ok) {
