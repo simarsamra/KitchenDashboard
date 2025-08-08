@@ -1,13 +1,12 @@
 // --- Config ---
 const REPO = 'simarsamra/kitchen-recipes-display';
 const RAW_URL = `https://raw.githubusercontent.com/${REPO}/main/recipes.json`;
-const LS_KEY = 'recipeData';
 
 const MEAL_TIMES = [
-  { name: "Breakfast", start: 5, end: 10 },   // 5AM - 10AM
-  { name: "Lunch", start: 11, end: 14 },      // 11AM - 2PM
-  { name: "Dinner", start: 17, end: 21 },     // 5PM - 9PM
-  { name: "Spare", start: 22, end: 4 }        // 10PM - 4AM (wraps around midnight)
+  { name: "Breakfast", start: 5, end: 10 },
+  { name: "Lunch", start: 11, end: 14 },
+  { name: "Dinner", start: 17, end: 21 },
+  { name: "Spare", start: 22, end: 4 }
 ];
 
 function getCurrentMeal() {
@@ -16,32 +15,41 @@ function getCurrentMeal() {
     if (meal.start <= meal.end) {
       if (hour >= meal.start && hour <= meal.end) return meal.name;
     } else {
-      // Wrap around midnight
       if (hour >= meal.start || hour <= meal.end) return meal.name;
     }
   }
   return "Breakfast";
 }
 
-// Day index for rotation (0-3 for 4 days)
-let dayIndex = 0;
+function getNextMeal() {
+  const hour = new Date().getHours();
+  for (let i = 0; i < MEAL_TIMES.length; i++) {
+    const meal = MEAL_TIMES[i];
+    if (meal.start <= meal.end) {
+      if (hour < meal.start) return meal.name;
+    } else {
+      if (hour < meal.start && hour > meal.end) return meal.name;
+    }
+  }
+  const idx = MEAL_TIMES.findIndex(m => m.name === getCurrentMeal());
+  return MEAL_TIMES[(idx + 1) % MEAL_TIMES.length].name;
+}
+
+function getDayIndex() {
+  const startDate = new Date('2024-01-01');
+  const today = new Date();
+  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  return diffDays % 4;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('refreshBtn').addEventListener('click', () => loadRecipes(true));
-  document.getElementById('optionBtn').addEventListener('click', () => {
-    dayIndex = (dayIndex + 1) % 4;
-    loadRecipes(false, true);
-  });
   loadRecipes();
-
-  setInterval(() => loadRecipes(), 1200000); // 20 min auto-refresh
+  setInterval(loadRecipes, 1200000); // 20 min auto-refresh
 });
 
-async function loadRecipes(forceRefresh=false, keepDay=false) {
+async function loadRecipes() {
   setStatus('Loading...');
   let recipes;
-
-  // Always fetch from GitHub (no localStorage)
   try {
     const resp = await fetch(RAW_URL, {cache: "no-store"});
     if (resp.ok) {
@@ -49,22 +57,7 @@ async function loadRecipes(forceRefresh=false, keepDay=false) {
       setStatus('Loaded from GitHub');
     } else throw new Error('GitHub fetch failed');
   } catch (e) {
-    setStatus('GitHub fetch failed, trying localStorage...');
-  }
-
-  if (!recipes) {
-    try {
-      const stored = localStorage.getItem(LS_KEY);
-      if (stored) {
-        recipes = JSON.parse(stored);
-        setStatus('Loaded from localStorage');
-      }
-    } catch (e) {
-      setStatus('localStorage load failed, using fallback...');
-    }
-  }
-
-  if (!recipes) {
+    setStatus('GitHub fetch failed, trying bundled file...');
     try {
       const resp = await fetch('recipes.json');
       if (resp.ok) {
@@ -77,29 +70,26 @@ async function loadRecipes(forceRefresh=false, keepDay=false) {
     }
   }
 
-  if (!keepDay) dayIndex = 0;
-
   showCurrentRecipe(recipes);
+  showPrepSuggestion(recipes);
 }
 
 function showCurrentRecipe(recipes) {
-  const container = document.getElementById('categories');
+  const container = document.getElementById('current-meal');
   container.innerHTML = '';
 
   const meal = getCurrentMeal();
   const mealArr = recipes[meal] || [];
+  const dayIndex = getDayIndex();
   if (!Array.isArray(mealArr) || mealArr.length === 0) {
     container.textContent = `No recipes found for ${meal}.`;
     return;
   }
-
-  // Get recipes for current day (each is an array of two: [International, North Indian])
   const todayRecipes = mealArr[dayIndex % mealArr.length];
   if (!Array.isArray(todayRecipes) || todayRecipes.length === 0) {
     container.textContent = `No recipes found for ${meal} (day ${dayIndex+1}).`;
     return;
   }
-
   const catDiv = document.createElement('div');
   catDiv.className = 'category';
   const h2 = document.createElement('h2');
@@ -112,12 +102,10 @@ function showCurrentRecipe(recipes) {
   todayRecipes.forEach(r => {
     const recDiv = document.createElement('div');
     recDiv.className = 'recipe';
-
     const h3 = document.createElement('h3');
     h3.textContent = `${r.type}: ${r.name || ''}`;
     recDiv.appendChild(h3);
 
-    // Ingredients
     if (r.ingredients) {
       const ing = document.createElement('ul');
       r.ingredients.forEach(ingredient => {
@@ -127,8 +115,6 @@ function showCurrentRecipe(recipes) {
       });
       recDiv.appendChild(ing);
     }
-
-    // Steps
     if (r.steps) {
       const steps = document.createElement('ol');
       r.steps.forEach(step => {
@@ -138,7 +124,63 @@ function showCurrentRecipe(recipes) {
       });
       recDiv.appendChild(steps);
     }
+    recipeRow.appendChild(recDiv);
+  });
 
+  catDiv.appendChild(recipeRow);
+  container.appendChild(catDiv);
+}
+
+function showPrepSuggestion(recipes) {
+  const container = document.getElementById('prep-suggestion');
+  container.innerHTML = '';
+
+  const nextMeal = getNextMeal();
+  const mealArr = recipes[nextMeal] || [];
+  const dayIndex = getDayIndex();
+  if (!Array.isArray(mealArr) || mealArr.length === 0) {
+    container.textContent = `No recipes found for ${nextMeal}.`;
+    return;
+  }
+  const nextRecipes = mealArr[dayIndex % mealArr.length];
+  if (!Array.isArray(nextRecipes) || nextRecipes.length === 0) {
+    container.textContent = `No recipes found for ${nextMeal} (day ${dayIndex+1}).`;
+    return;
+  }
+  const catDiv = document.createElement('div');
+  catDiv.className = 'category';
+  const h2 = document.createElement('h2');
+  h2.textContent = `Preparation for Next Meal: ${nextMeal}`;
+  catDiv.appendChild(h2);
+
+  const recipeRow = document.createElement('div');
+  recipeRow.className = 'recipe-list';
+
+  nextRecipes.forEach(r => {
+    const recDiv = document.createElement('div');
+    recDiv.className = 'recipe';
+    const h3 = document.createElement('h3');
+    h3.textContent = `${r.type}: ${r.name || ''}`;
+    recDiv.appendChild(h3);
+
+    if (r.ingredients) {
+      const ing = document.createElement('ul');
+      r.ingredients.forEach(ingredient => {
+        const li = document.createElement('li');
+        li.textContent = ingredient;
+        ing.appendChild(li);
+      });
+      recDiv.appendChild(ing);
+    }
+    if (r.steps) {
+      const steps = document.createElement('ol');
+      r.steps.forEach(step => {
+        const li = document.createElement('li');
+        li.textContent = step;
+        steps.appendChild(li);
+      });
+      recDiv.appendChild(steps);
+    }
     recipeRow.appendChild(recDiv);
   });
 
