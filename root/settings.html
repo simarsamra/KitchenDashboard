@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button class="btn" onclick="location.href='index.html'">← Dashboard</button>
+    <h1>Settings & Sync</h1>
+  </header>
+  <div class="page" id="settingsPage">
+    <section class="widget">
+      <h2>Import Recipes</h2>
+      <input type="file" id="importRecipesInput" accept=".json">
+      <button onclick="importRecipes()" class="btn">Import</button>
+    </section>
+    <section class="widget">
+      <h2>Export Recipes</h2>
+      <button onclick="exportRecipes()" class="btn">Export</button>
+    </section>
+    <section class="widget">
+      <h2>Remote Sync</h2>
+      <input type="text" id="remoteUrlInput" placeholder="GitHub raw URL">
+      <button onclick="syncRemoteRecipes()" class="btn">Sync from Remote</button>
+    </section>
+    <section class="widget">
+      <h2>Weather Settings</h2>
+      <input type="text" id="weatherCityInput" placeholder="City name">
+      <input type="text" id="weatherApiKeyInput" placeholder="OpenWeatherMap API Key">
+      <button onclick="saveWeatherSettings()" class="btn">Save Weather Settings</button>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
