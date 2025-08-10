@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Kitchen Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <header>
     <h1>Kitchen Dashboard</h1>
-    <span id="status"></span>
   </header>
-  <main>
-    <section id="current-meal"></section>
-    <section id="prep-suggestion"></section>
-    <section id="grocery-list"></section>
-  </main>
+  <div class="page">
+    <nav>
+      <button class="btn" onclick="location.href='recipes.html'">🍳 Today's Recipes</button>
+      <button class="btn" onclick="location.href='grocery.html'">🛒 Grocery List</button>
+      <button class="btn" onclick="location.href='settings.html'">⚙️ Settings</button>
+    </nav>
+    <div class="widget" id="weatherWidget"></div>
+    <div class="widget" id="calendarWidget"></div>
+    <div class="widget" id="prepAlert"></div>
+  </div>
   <script src="script.js"></script>
+  <script src="weather.js"></script>
+  <script src="calendar.js"></script>
 </body>
 </html>
-
