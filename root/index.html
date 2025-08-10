@@ -1,28 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kitchen Dashboard</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Kitchen Dashboard</h1>
-  </header>
-  <div class="page">
-    <nav>
-      <button class="btn" onclick="location.href='recipes.html'">🍳 Today's Recipes</button>
-      <button class="btn" onclick="location.href='grocery.html'">🛒 Grocery List</button>
-      <button class="btn" onclick="location.href='settings.html'">⚙️ Settings</button>
-    </nav>
-    <div class="widget" id="weatherWidget"></div>
-    <div class="widget" id="calendarWidget"></div>
-    <div class="widget" id="prepAlert"></div>
+  <div id="app">
+    <header class="topbar">
+      <div class="left">
+        <div id="time" class="time"></div>
+        <div id="date" class="date"></div>
+      </div>
+      <div class="right">
+        <div id="weather" class="weather">Weather: <span id="weather-summary">—</span></div>
+        <button id="refreshBtn" class="btn small">Refresh Recipes</button>
+        <button id="settingsBtn" class="btn small">Settings</button>
+      </div>
+    </header>
+
+    <main>
+      <nav class="menu">
+        <button class="nav-btn" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="recipe">Today's Recipe</button>
+        <button class="nav-btn" data-view="grocery">Grocery List (Week)</button>
+        <button class="nav-btn" data-view="calendar">Calendar</button>
+        <button class="nav-btn" data-view="prep">Prep Ahead</button>
+      </nav>
+
+      <section id="view-container" class="view">
+        <!-- Dashboard view -->
+        <div id="view-dashboard" class="view-page">
+          <h2>Kitchen Dashboard</h2>
+          <div class="cards">
+            <div class="card">
+              <h3>Today's Meal</h3>
+              <div id="today-meal"></div>
+            </div>
+            <div class="card">
+              <h3>Prep Now</h3>
+              <div id="prep-now"></div>
+            </div>
+            <div class="card">
+              <h3>Weather</h3>
+              <div id="weather-card"></div>
+            </div>
+            <div class="card">
+              <h3>Today's Events</h3>
+              <div id="events-card"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recipe view -->
+        <div id="view-recipe" class="view-page hidden">
+          <button class="back btn" data-view="dashboard">← Back</button>
+          <h2>Today's Recipe</h2>
+          <div id="recipe-content"></div>
+        </div>
+
+        <!-- Grocery view -->
+        <div id="view-grocery" class="view-page hidden">
+          <button class="back btn" data-view="dashboard">← Back</button>
+          <h2>Weekly Grocery List</h2>
+          <div class="grocery-controls">
+            <button id="clearChecked" class="btn small">Clear Checked</button>
+            <button id="exportGrocery" class="btn small">Export</button>
+          </div>
+          <ul id="grocery-list" class="grocery-list"></ul>
+        </div>
+
+        <!-- Calendar view -->
+        <div id="view-calendar" class="view-page hidden">
+          <button class="back btn" data-view="dashboard">← Back</button>
+          <h2>Today's Calendar</h2>
+          <div id="calendar-setup">
+            <p>Google Calendar integration needs user sign-in and an OAuth client ID.</p>
+            <button id="gcalSignIn" class="btn">Sign in to Google</button>
+            <button id="gcalSignOut" class="btn">Sign out</button>
+          </div>
+          <div id="calendar-events"></div>
+        </div>
+
+        <!-- Prep view -->
+        <div id="view-prep" class="view-page hidden">
+          <button class="back btn" data-view="dashboard">← Back</button>
+          <h2>Prep Ahead</h2>
+          <div id="prep-list"></div>
+        </div>
+
+        <!-- Settings modal -->
+        <div id="settingsModal" class="modal hidden">
+          <div class="modal-body">
+            <h3>Settings</h3>
+            <label>Recipes remote raw URL (optional):
+              <input id="remoteUrl" type="text" placeholder="https://raw.githubusercontent.com/you/repo/main/recipes.json" />
+            </label>
+            <label>OpenWeatherMap API Key:
+              <input id="owmKey" type="text" placeholder="Enter API key (optional)"/>
+            </label>
+            <label>City name (for weather):
+              <input id="owmCity" type="text" placeholder="City name"/>
+            </label>
+            <label>Google OAuth Client ID:
+              <input id="gclientId" type="text" placeholder="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"/>
+            </label>
+            <div class="modal-actions">
+              <button id="saveSettings" class="btn">Save</button>
+              <button id="closeSettings" class="btn">Close</button>
+            </div>
+            <p class="note">Notes: For Google Calendar you must create an OAuth client ID (type: Web application) and add the page URL to authorized origins. See README in repo.</p>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Kitchen Dashboard — Offline first. Data stored locally; remote sync optional.</small>
+    </footer>
   </div>
-  <script src="script.js"></script>
-  <script src="weather.js"></script>
-  <script src="calendar.js"></script>
+
+  <!-- Google API client (loaded on demand by app.js if configured) -->
+  <script src="https://apis.google.com/js/api.js" async defer></script>
+
+  <script src="app.js"></script>
 </body>
 </html>
